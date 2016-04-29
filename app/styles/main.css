@@ -1,0 +1,325 @@
+body {
+    padding: 0;
+}
+
+.all-view {
+    width: 100%;
+    height: calc(100% - 60px);
+    z-index: 99;
+    position: absolute;
+}
+
+.all-view.all {
+    height: 100%;
+}
+
+loader {
+    z-index: 100
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#main_pyq {
+    width: 100%;
+    height: 100%;
+}
+
+#main_pyq .m-l{
+    height: 100%;
+    width: 200px;
+    float: left;
+    background-color: #82A0E3;
+    overflow: auto;
+}
+
+#main_pyq .m-l .panel-group{
+    margin: 0 !important;
+}
+
+#main_pyq .m-l .panel-group .panel-l{
+    color: #f9f9f9;
+    border: 0;
+    overflow: hidden;
+}
+
+#main_pyq .m-l .panel-group .panel-l .nav-con{
+    display: none;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-heading{
+    padding: 5px;
+    background-color: #579BD5;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-title{
+    height: 35px;
+    width: 100%;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-title i{
+    float: left;
+    width: 20px;
+    height: 100%;
+    text-align: center;
+    line-height: 35px;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-title a{
+    width: calc(100% - 20px);
+    float: left;
+    height: 100%;
+    line-height: 35px;
+    padding-left: 5px;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-body{
+    padding: 5px;
+    background-color: #A4BAFF;
+    border: 0;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-body ul{
+    width: 100%;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-body ul li{
+    width: 100%;
+    height: 40px;
+    padding: 5px 0 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-body ul li:hover{
+    background-color: #4AACDD;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-body ul li.active{
+    background-color: #4AACDD;
+}
+
+#main_pyq .m-l .panel-group .panel-l .panel-body ul li span{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#main_pyq .m-r{
+    width: calc(100% - 200px);
+    height: 100%;
+    float: left;
+}
+
+#formList_pyq{
+    width: 100%;
+    height: 100%;
+}
+
+#formList_pyq .form-header{
+    width: 100%;
+    height: 80px;
+    padding: 15px 10px;
+}
+
+#formList_pyq .form-header .header-box{
+    width: 100%;
+    height: 100%;
+    background-color: #DAE8EF;
+    border-radius: 10px;
+}
+
+#formList_pyq .form-header .header-box .h-l{
+    width: calc(100% - 300px);
+    height: 100%;
+    float: left;
+    padding: 8px 20px;
+}
+
+#formList_pyq .form-header .header-box .h-r{
+    width: 300px;
+    height: 100%;
+    float: right;
+}
+
+#formList_pyq .form-header .header-box .h-l input{
+    width: 300px;
+    float: left;
+    padding-right: 25px;
+    margin-left: 20px;
+}
+
+#formList_pyq .form-header .header-box .h-l i{
+    display: inline-block;
+    height: 100%;
+    line-height: 34px;
+    position: relative;
+    float: left;
+    left: -20px;
+}
+
+#formList_pyq .form-header .header-box .h-r .add-btn{
+    width: 80px;
+    height: 100%;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#formList_pyq .form-header .header-box .h-r .add-btn:hover{
+    color: #0b97c4;
+}
+
+#formList_pyq .form-body{
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    height: calc(100% - 100px);
+}
+
+#formList_pyq .form-body .form-main{
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px 0 5px;
+    background-color: #EEF6FA;
+    -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, .10);
+    -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, .10);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, .10);
+}
+
+#formList_pyq .form-body .form-main .d-table{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+
+#formList_pyq .form-body .home-table {
+    min-width: 100%;
+}
+
+#formList_pyq .form-body .home-table thead {
+    background-color: #fff;
+    color: #404040;
+}
+
+#formList_pyq .form-body .home-table tbody {
+    color: #666666;
+}
+
+#formList_pyq .form-body .home-table thead tr,
+#formList_pyq .form-body .home-table tbody tr {
+    height: 50px !important;
+}
+
+#formList_pyq .form-body .home-table thead tr th:first-child {
+    overflow: visible !important;
+}
+
+#formList_pyq .form-body .home-table thead tr th,
+#formList_pyq .form-body .home-table tbody tr td {
+    max-width: 200px;
+    min-width: 120px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#formList_pyq .form-body .home-table thead tr th .table-menu-icon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url(../../images/home/menu-icon.png);
+    background-position: center;
+    background-size: 25px 25px;
+    left: 0;
+    top: -15px;
+}
+
+#formList_pyq .form-body .home-table thead tr th .f-f-f {
+    position: relative;
+}
+
+#formList_pyq .form-body .home-table tbody tr td .color-edit {
+    color: #00b28c;
+}
+
+#formList_pyq .form-body .home-table tbody tr td .color-delete {
+    color: #fabe92;
+}
+
+#formList_pyq .form-body .home-table tbody tr td img {
+    width: 50px;
+    cursor: pointer;
+    margin-top: 1px;
+    max-height: 95%;
+}
+
+#formList_pyq .form-body .home-table tbody tr td {
+    font-size: 12px;
+}
+
+#formList_pyq .form-body .home-table tbody tr:hover {
+    background-color: #e5f6f2;
+}
+
+#formList_pyq .form-body .home-table tbody tr td span {
+    display: inline-block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+#formList_pyq .form-body .home-table tbody tr:nth-child(2n-1) {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+#formList_pyq .form-body .home-table tbody tr:nth-child(2n-1):hover {
+    background-color: #e5f6f2;
+    cursor: pointer;
+}
+
+#formList_pyq .form-body .home-table tbody tr:nth-child(2n) {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+#formList_pyq .form-body .home-table tbody tr:nth-child(2n):hover {
+    background-color: #e5f6f2;
+    cursor: pointer;
+}
+
+#formList_pyq .form-body .home-table thead tr th.is-checkbox,
+#formList_pyq .form-body .home-table tbody tr td.is-checkbox {
+    width: 50px;
+    min-width: 50px;
+    text-align: center;
+    overflow: visible;
+}
+
+#formList_pyq .form-body .home-table thead tr th .click-delete {
+    text-align: center;
+    top: 8px;
+    color: #666666;
+}
+
+#formList_pyq .form-body .home-table tbody tr td.is-op {
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+}

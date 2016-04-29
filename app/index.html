@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>电子合同管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+    <base href="/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="f0LCrdI6z4Fo8zld4sHCgo5SiUE4EYYRUa6KVeX3Mw8" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="stylesheet" href="styles/common/base.css">
+    <link rel="stylesheet" href="styles/common/common.css">
+    <link rel="stylesheet" href="styles/common/cssreset.css">
+    <link rel="stylesheet" href="styles/common/font-awesome.min.css">
+
+    <link rel="stylesheet" href="styles/login.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="webProjectApp">
+<loader working="isLoading" message="加载中"></loader>
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<toaster-container
+        toaster-options="{'time-out': 2000, 'close-button':true, 'animation-class': 'toast-top-right'}"></toaster-container>
+<!-- Add your site or application content here -->
+<div header ng-if="!isHide"></div>
+
+<div class="all-view" ng-class="{'all':isHide}" ui-view="" ></div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+<script src="bower_components/tinymce-dist/tinymce.js"></script>
+<script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+
+<script src="scripts/libs/pinyin.js"></script>
+
+<script src="scripts/filters/filters.js"></script>
+
+<script src="scripts/configs/http.interceptor.js"></script>
+<script src="scripts/configs/router.config.js"></script>
+<script src="scripts/configs/noCache.interceptor.js"></script>
+<script src="scripts/configs/loading.config.js"></script>
+<script src="scripts/configs/http.config.js"></script>
+<script src="scripts/configs/app.js"></script>
+
+<script src="scripts/directives/app.js"></script>
+<script src="scripts/directives/header.directive.js"></script>
+
+<script src="scripts/services/common.services.js"></script>
+<script src="scripts/services/rigist.service.js"></script>
+<script src="scripts/services/nav.service.js"></script>
+<script src="scripts/services/main.service.js"></script>
+<script src="scripts/services/app.js"></script>
+
+<script src="scripts/controllers/app.js"></script>
+<script src="scripts/controllers/login.controller.js"></script>
+<script src="scripts/controllers/formList.controller.js"></script>
+<script src="scripts/controllers/main.js"></script>
+
+<script src="scripts/init/init.js"></script>
+<!-- endbuild -->
+</body>
+</html>

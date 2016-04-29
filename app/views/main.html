@@ -1,0 +1,32 @@
+<div id="main_pyq">
+    <div class="m-l">
+        <div class="panel-group" role="tablist" aria-multiselectable="true">
+            <div ng-repeat="list in main.arrayList track by $index" class="panel panel-l">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                        <i ng-if="!list.isShow" class="fa fa-chevron-circle-right"></i>
+                        <i ng-if="list.isShow" class="fa fa-chevron-circle-down"></i>
+                        <a role="button" data-toggle="collapse"
+                           ng-bind="list.name"
+                           ng-click="main.chooseList(list,$event)"
+                           title="{{list.name}}">
+                        </a>
+                    </h4>
+                </div>
+                <div id="{{'collapse'+list.id}}" class="panel-collapse collapse nav-con" role="tabpanel"
+                     aria-labelledby="{{'heading'+list.id}}">
+                    <div class="panel-body">
+                        <ul>
+                            <li ng-repeat="item in list.children track by $index"
+                                ng-click="main.chooseItem($event,list,item)"
+                                ng-class="{'active':main.thisList.id == list.id && main.thisItem.id == item.id}">
+                                <span ng-bind="item.name" title="{{item.name}}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-r" ui-view></div>
+</div>

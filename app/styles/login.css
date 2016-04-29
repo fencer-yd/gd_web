@@ -1,0 +1,221 @@
+#login{
+    width: 100%;
+    height: 100%;
+}
+
+#login .login-main{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/login/bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#login .login-main .login-content{
+    float: left;
+    width: 450px;
+    height: 350px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgba(0,0,0,.25);
+}
+
+#login .login-main .login-title{
+    color: #f9f9f9;
+    font-size: 30px;
+    position: absolute;
+    top: calc(50% - 225px);
+    font-family: "STXingkai" !important;
+}
+#login .login-main .login-content .login-info{
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    margin: 30px 15px;
+    border-radius: 10px;
+}
+#login .login-main .login-content .login-info i{
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    line-height: 38px;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+#login .login-main .login-content .login-info input{
+    background-color: transparent;
+    border: 0;
+    width: calc(100% - 55px);
+    height: 100%;
+    line-height: 38px;
+    font-size: 15px;
+    color: #f9f9f9;
+}
+
+#login .login-main .login-content .login-btn{
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+}
+
+#login .login-main .login-content .login-btn button{
+    background-color: #B3E7D3;
+    width: 100px;
+    margin: 0 15px;
+}
+
+#login .error-tip{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #FF3000;
+    height: 20px;
+}
+
+#login .login-main .login-content .login-btn button:focus,
+#login .login-main .login-content .login-btn button:active{
+    outline: none;
+}
+
+
+#rigist .rigist-info{
+    height: 55px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    position: relative;
+}
+
+#rigist .rigist-info label{
+    width: 150px;
+    height: 100%;
+    float: left;
+    line-height: 35px;
+    padding-right: 10px;
+    text-align: right;
+    margin: 0 !important;
+}
+
+#rigist .rigist-info input{
+    width: calc(100% - 260px);
+    height: 100%;
+    float: left;
+    margin-left: 10px;
+}
+
+#rigist .rigist-info input.error{
+    border-color: #ED4F4F;
+}
+
+#rigist .rigist-info i{
+    left: -20px;
+    top: 7px;
+    position: relative;
+}
+
+#rigist .rigist-info .i-t{
+    color: #33DD48;
+}
+
+#rigist .rigist-info .i-e{
+    color: #ED4F4F;
+}
+
+#rigist .rigist-info span{
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    height: 20px;
+    left: 0;
+    top: -10px;
+    text-align: center;
+    color: #ED4F4F;
+    font-size: 12px;
+}
+
+#rigist .rigist-info .input-check{
+    padding-right: 25px;
+}
+#rigist .rigist-info .rigist-radio{
+    width: 20px;
+    float: left;
+    margin: 0 0 0 20px !important;
+}
+
+#rigist .rigist-info .rigist-label{
+    width: 80px;
+    text-align: left;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+#header_pyq{
+    width: 100%;
+    height: 60px;
+    background: rgba(72, 117, 255, 0.5);
+}
+
+#header_pyq .header-left{
+    width: 250px;
+    height: 100%;
+    float: left;
+}
+
+#header_pyq .header-left i{
+    width: 80px;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 32px;
+    float: left;
+    color: #443bff;
+    line-height: 60px;
+}
+
+#header_pyq .header-left span{
+    display: inline-block;
+    float: left;
+    width: calc(100% - 80px);
+    font-size: 18px;
+    color: #666;
+    line-height: 60px;
+    text-align: center;
+}
+
+#header_pyq .header-right{
+    float: right;
+    width: 300px;
+    height: 100%;
+}
+
+#header_pyq .header-right .right-btn{
+    float: left;
+    width: 150px;
+    height: 100%;
+    cursor: pointer;
+}
+
+#header_pyq .header-right .right-btn i{
+    width: 50px;
+    height: 100%;
+    display: inline-block;
+    line-height: 60px;
+    text-align: center;
+    float: left;
+    font-size: 20px;
+}
+
+#header_pyq .header-right .right-btn span{
+    display: inline-block;
+    width: calc(100% - 50px);
+    float: left;
+    height: 100%;
+    text-align: left;
+    line-height: 60px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

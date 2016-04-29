@@ -1,0 +1,56 @@
+<div class="modal modal-preview" id="rigist" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>注册帐号</span>
+                <i class="fa fa-times fr cursor-pointer" ng-click="$hide()"></i>
+            </div>
+            <div class="modal-body">
+                <div class="rigist-info">
+                    <span ng-if="rigist.readyCN && rigist.checkData.checkCNResult == 'false'" ng-bind="rigist.error.companyName"></span>
+                    <label>公司名称:</label>
+                    <input class="form-control apl-form-input input-check" ng-model="rigist.putData.companyName" maxlength="15" ng-class="{'error':rigist.readyCN && rigist.checkData.checkCNResult == 'false'}" ng-blur="rigist.checkCompanyName()" type="text">
+                    <i class="fa fa-spinner fa-spin" ng-show="rigist.readyCN && !rigist.checkData.checkCNResult" ></i>
+                    <i class="fa fa-check i-t" ng-show="rigist.readyCN && rigist.checkData.checkCNResult == 'true'"></i>
+                    <i class="fa fa-times i-e" ng-show="rigist.readyCN && rigist.checkData.checkCNResult == 'false'"></i>
+                </div>
+                <div class="rigist-info">
+                    <span ng-if="rigist.readyDo && rigist.checkData.checkDoResult == 'false'" ng-bind="rigist.error.domain"></span>
+                    <label>公司域名:</label>
+                    <input class="form-control apl-form-input input-check" ng-model="rigist.putData.domain" maxlength="15" ng-class="{'error':rigist.readyDo && rigist.checkData.checkDoResult == 'false'}" ng-blur="rigist.checkDomain()" type="text">
+                    <i class="fa fa-spinner fa-spin" ng-show="rigist.readyDo && !rigist.checkData.checkDoResult"></i>
+                    <i class="fa fa-check i-t" ng-show="rigist.readyDo && rigist.checkData.checkDoResult == 'true'"></i>
+                    <i class="fa fa-times i-e" ng-show="rigist.readyDo && rigist.checkData.checkDoResult == 'false'"></i>
+                    <i></i>
+                </div>
+                <div class="rigist-info">
+                    <span ng-if="rigist.checkData.checkReleaseResult == 'false'" ng-bind="rigist.error.release"></span>
+                    <label>版本:</label>
+                    <input id="rigist_version1" value="standard" name="rigist_version" class="rigist-radio" ng-model="rigist.putData.release" type="radio">
+                    <label for="rigist_version1"  class="rigist-label">标准版</label>
+                    <input id="rigist_version2" value="senior" name="rigist_version" class="rigist-radio" ng-model="rigist.putData.release" type="radio">
+                    <label for="rigist_version2"  class="rigist-label">专业版</label>
+                </div>
+                <div class="rigist-info">
+                    <span ng-if="rigist.checkData.checkUsernameResult == 'false'" ng-bind="rigist.error.username"></span>
+                    <label>管理员帐号:</label>
+                    <input class="form-control apl-form-input" ng-model="rigist.putData.username" ng-class="{'error':rigist.checkData.checkUsernameResult == 'false'}" type="text">
+                </div>
+                <div class="rigist-info">
+                    <span ng-if="rigist.checkData.checkPasswordResult == 'false'" ng-bind="rigist.error.password"></span>
+                    <label>管理员密码:</label>
+                    <input class="form-control apl-form-input" ng-model="rigist.putData.password" ng-class="{'error':rigist.checkData.checkPasswordResult == 'false'}" type="password">
+                </div>
+                <div class="rigist-info">
+                    <span ng-if="rigist.checkData.checkTPasswordResult == 'false'" ng-bind="rigist.error.tPassword"></span>
+                    <label>再次输入密码:</label>
+                    <input class="form-control apl-form-input" ng-model="rigist.putData.tPassword" ng-class="{'error':rigist.checkData.checkTPasswordResult == 'false'}" type="password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" ng-click="rigist.rigist()">确认</button>
+                <button type="button" class="btn btn-warning" ng-click="rigist.reset()">重置</button>
+            </div>
+        </div>
+    </div>
+</div>

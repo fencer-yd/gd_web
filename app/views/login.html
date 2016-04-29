@@ -1,0 +1,26 @@
+<div id="login" ng-keypress="login.enterLogin($event)">
+    <div class="login-main">
+        <div class="login-title h-center">
+            <span>电子合同在线管理平台</span>
+        </div>
+        <div class="login-content c-center">
+            <div class="login-info">
+                <i class="fa fa-institution"></i>
+                <input ng-model="login.domain" ng-class="{'error':login.isError}" placeholder="请输入公司域名" type="text">
+            </div>
+            <div class="login-info">
+                <i class="fa fa-user"></i>
+                <input ng-model="login.username" ng-class="{'error':login.isError}" placeholder="请输入用户名" type="text">
+            </div>
+            <div class="login-info">
+                <i class="fa fa-lock"></i>
+                <input ng-model="login.password" ng-class="{'error':login.isError}" placeholder="请输入密码" type="password">
+            </div>
+            <div class="error-tip" ng-bind="login.errorTip"></div>
+            <div class="login-btn">
+                <button class="btn btn-save" ng-click="login.rigist()">注册</button>
+                <button class="btn btn-save" ng-click="login.login()">登陆</button>
+            </div>
+        </div>
+    </div>
+</div>
