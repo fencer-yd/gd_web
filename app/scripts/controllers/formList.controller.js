@@ -13,11 +13,14 @@
 
 		_self.thisItemId = $state.params.itemId;
 
-		//mainService.getList(_self.thisListId,_self.thisItemId).success(function(res){
-		//	console.log(res);
-		//	_self.tableList =  res.list;
-		//	_self.tableTheadList = res.tableHeadList;
-		//});
+		mainService.getMenuData(_self.thisListId,_self.thisItemId).success(function(res){
+      console.log(res);
+			//_self.tableList =  res.;
+			_self.tableTheadList = res.value;
+      angular.forEach(_self.tableTheadList, function(data,index,array){
+        console.log(index);
+      });
+		});
 
 
 	};

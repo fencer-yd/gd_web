@@ -9,6 +9,7 @@
 		this.getNavList = function (id, data) {
 			return $http.get('/rest/nav/list?id=' + id, data);
 		};
+    this.getListData()
 
 	};
 

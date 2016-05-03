@@ -8,15 +8,15 @@
 
 		var _self = this;
 
-		_self.username = $cookies.get('username_pyq')
+		_self.username = $cookies.get('username')
 
 
 		_self.logout = function(){
 
 			$cookies.remove('isLogin_pyq');
-			$cookies.remove('name_pyq');
+			$cookies.remove('realname');
 			$cookies.remove('JSESSIONID');
-			$cookies.remove('username_pyq');
+			$cookies.remove('username');
 			$cookies.remove('role_pyq');
 
 		}

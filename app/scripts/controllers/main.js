@@ -10,7 +10,7 @@
 
 (function () {
 
-	var mainCtrl = function ($scope, $state, $timeout) {
+	var mainCtrl = function ($scope, $state, $timeout,mainService,$cookies) {
 
 		var _self = this;
 
@@ -18,122 +18,12 @@
 
 		_self.itemId = $state.params.itemId;
 
-		_self.arrayList = [
-			{
-				id: 0,
-				children: [
-					{
-						id: 0,
-						name: '第1条'
-					}, {
-						id: 1,
-						name: '第2条'
-					}, {
-						id: 2,
-						name: '第3条'
-					}, {
-						id: 3,
-						name: '第4条'
-					}
-				],
-				name: '第1条'
-			},
-			{
-				id: 1,
-				children: [
-					{
-						id: 0,
-						name: '第1条'
-					}, {
-						id: 1,
-						name: '第2条'
-					}, {
-						id: 2,
-						name: '第3条'
-					}, {
-						id: 3,
-						name: '第4条'
-					}
-				],
-				name: '第2条'
-			},
-			{
-				id: 2,
-				children: [
-					{
-						id: 0,
-						name: '第1条'
-					}, {
-						id: 1,
-						name: '第2条'
-					}, {
-						id: 2,
-						name: '第3条'
-					}, {
-						id: 3,
-						name: '第4条'
-					}
-				],
-				name: '第3条'
-			},
-			{
-				id: 3,
-				children: [
-					{
-						id: 0,
-						name: '第1条'
-					}, {
-						id: 1,
-						name: '第2条'
-					}, {
-						id: 2,
-						name: '第3条'
-					}, {
-						id: 3,
-						name: '第4条'
-					}
-				],
-				name: '第4条'
-			},
-			{
-				id: 4,
-				children: [
-					{
-						id: 0,
-						name: '第1条'
-					}, {
-						id: 1,
-						name: '第2条'
-					}, {
-						id: 2,
-						name: '第3条'
-					}, {
-						id: 3,
-						name: '第4条'
-					}
-				],
-				name: '第5条'
-			},
-			{
-				id: 5,
-				children: [
-					{
-						id: 0,
-						name: '第1条'
-					}, {
-						id: 1,
-						name: '第2条'
-					}, {
-						id: 2,
-						name: '第3条'
-					}, {
-						id: 3,
-						name: '第4条'
-					}
-				],
-				name: '第6条'
-			}
-		];
+    mainService.getUserMenus($cookies.get('userId')).success(function(res){
+      console.log(res);
+      _self.arrayList = res.value;
+    }).error(function(res){
+      console.log(res);
+    });
 
 		_self.chooseList = function (list, e) {
 			if (e) {
@@ -212,7 +102,7 @@
 
 	};
 
-	mainCtrl.$Inject = ['$scope', '$state', '$timeout'];
+	mainCtrl.$Inject = ['$scope', '$state', '$timeout','mainService','$cookies'];
 
 	angular.module('mainCtrl', [])
 		.controller('mainCtrl', mainCtrl);

@@ -60,7 +60,7 @@
 				_self.error.companyName = '公司域名不能为空';
 			}
 		};
-		
+
 		_self.checkDomain = function () {
 			_self.readyDo = true;
 			_self.checkData.checkDoResult = null;
@@ -197,12 +197,14 @@
 
 				rigistService.login(putData).success(function(res){
 					if(res.code === 0){
+
 						$cookies.put('isLogin_pyq',true);
-						console.log(res);
-						$cookies.put('username_pyq',res.value.username);
+						$cookies.put('username',res.value.username);
+            $cookies.put('userId',res.value.id);
+            $cookies.put('tenantId',res.value.tenant);
 						$cookies.put('role_pyq',res.value.role);
 						$cookies.put('JSESSIONID',res.value.token);
-						$cookies.put('name_pyq',res.value.name);
+						$cookies.put('realname',res.value.name);
 						$rootScope.isHide = false;
 						$state.go('main');
 					}

@@ -19,69 +19,85 @@
                 <table class="home-table">
                     <thead>
                         <tr>
-                            <th>1</th>
-                            <th>2</th>
-                            <th>3</th>
-                            <th>4</th>
-                            <th>5</th>
+                            <th ng-repeat="filed in form.tableTheadList">{{filed}}</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                        <tr ng-repeat="row in rows">
+                            <td ng-repeat="col in cols">
+                              <span ng-bind="col.name"></span>
+                            </td>
+                            <td>
+                                <div>
+                                    <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                                    <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                                </div>
+                            </td>
+
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                          <td ng-repeat="filed in form.tableTheadList">1</td>
+                          <td>
+                          <div>
+                            <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                            <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                          </div>
+                          </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                          <td ng-repeat="filed in form.tableTheadList">1</td>
+                          <td>
+                          <div>
+                            <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                            <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                          </div>
+                          </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                          <td ng-repeat="filed in form.tableTheadList">1</td>
+                          <td>
+                          <div>
+                            <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                            <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                          </div>
+                          </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                          <td ng-repeat="filed in form.tableTheadList">1</td>
+                          <td>
+                          <div>
+                            <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                            <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                          </div>
+                          </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                          <td ng-repeat="filed in form.tableTheadList">1</td>
+                          <td>
+                          <div>
+                            <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                            <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                          </div>
+                          </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                          <td ng-repeat="filed in form.tableTheadList">1</td>
+                          <td>
+                          <div>
+                            <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                            <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                          </div>
+                          </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                          <td ng-repeat="filed in form.tableTheadList">1</td>
+                          <td>
+                          <div>
+                            <i class="fa fa-trash" title="删除" ng-click="delete()"></i>
+                            <i class="fa fa-edit" title="编辑" ng-click="edit()"></i>
+                          </div>
+                          </td>
                         </tr>
                     </tbody>
                 </table>
