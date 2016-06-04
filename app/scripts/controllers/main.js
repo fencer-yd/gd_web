@@ -19,7 +19,6 @@
 		_self.itemId = $state.params.itemId;
 
     mainService.getUserMenus($cookies.get('userId')).success(function(res){
-      console.log(res);
       _self.arrayList = res.value;
     }).error(function(res){
       console.log(res);
@@ -93,7 +92,6 @@
 			e.stopPropagation();
 			_self.thisList = list;
 			_self.thisItem = item;
-
 			$state.go('main.form', {
 				listId: list.id,
 				itemId: item.id

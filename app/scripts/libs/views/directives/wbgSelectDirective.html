@@ -1,0 +1,98 @@
+<div class="wbg-select">
+    <div class="wbg-select-tags"
+         ng-class="{true:'dropdown-show'}[showDropdown]"
+         style=" max-height: 315px;overflow-y: auto;"
+         ng-click="dropdownShow()">
+        <span class="tags-multiple"
+              ng-if="options.multiple&&!isEmpty(innerItems)&& options.selectType != 'allUserGroupType'"
+              ng-repeat="item in innerItems">
+              {{itemTrans(item)}}
+            <i class="item-rm" ng-click="itemRm(item,$event)"></i>
+        </span>
+        <span class="allUserGroupType-span tags-multiple"
+              ng-if="options.multiple&&!isEmpty(innerItems)&& options.selectType == 'allUserGroupType'"
+              ng-repeat="item in innerItems"
+              ng-class="{'user-type':item.type == 1,'group-type':item.type == 0,'all-type':item.type == -1}">
+              {{item.name}}
+            <i class="item-rm" ng-click="itemRm(item,$event)"></i>
+        </span>
+        <span class="tags-no-multiple" ng-if="!options.multiple&&!isEmpty(innerItems)"
+              ng-bind="itemTrans(innerItems)"></span>
+        <span class="tags-no-multiple"
+              ng-show="isEmpty(innerItems)"
+              ng-bind="options.placeholder"></span>
+        <i class="tags-arrow"
+           ng-class="{true:'arrow-up',false:'arrow-down'}[showDropdown==true]"></i>
+    </div>
+    <div class="wbg-select-dropdown" ng-if="showDropdown">
+        <div class="wbg-select-search">
+            <div class="search-group">
+                <input type="text" id="wbg-search-input-{{timeStr}}" ng-model="searchText" ng-blur="searchInputBlur()">
+                <i class="icon-search"></i>
+            </div>
+        </div>
+        <ul ng-if="options.selectType=='dpSelect'">
+            <li ng-repeat="item in thisOrgTree|filter:searchText">
+                <i class="triangle pointer"
+                   ng-if="item.children&&item.children.length>0&&searchText.length<=0"
+
+                   ng-style="{left:(item.level)*10-4}"
+                   ng-class="{true:'triangle-bottom',false:'triangle-right'}[childShowDp[item.id]==true||searchText.length>0]"
+                   ng-click="triangleClick(item)"></i>
+
+                <div class="wbg-select-item dp-select"
+                     ng-style="{'padding-left':(item.level+1)*10+4}"
+                     ng-class="{true:'active'}[isInArray(item.id,innerItems)>-1]"
+                     title="{{item.fullname}}"
+                     ng-click="itemClick(item)">
+                    <span>{{item.fullname}}</span>
+                </div>
+                <ng-include
+                        ng-if="childShowDp[item.id]||searchText.length>0"
+                        src="'views/directives/_dpSelectInclude.html'">
+                </ng-include>
+            </li>
+        </ul>
+        <ul ng-if="options.selectType=='contactSelect'">
+            <li ng-repeat="item in allContacts|filter:searchText">
+                <div class="wbg-select-item contact-select"
+                     ng-class="{true:'active'}[isInArray(item.id,innerItems)>-1]"
+                     title="{{item.fullname}}"
+                     ng-click="itemClick(item)">
+                    <span>{{item.fullname}}</span>
+                </div>
+            </li>
+        </ul>
+        <ul ng-if="options.selectType=='formDataSelect'">
+            <li ng-repeat="item in formOtherSelectedData|filter:searchText">
+                <div class="wbg-select-item contact-select"
+                     ng-class="{true:'active'}[isInArray(item.fieldId,innerItems)>-1]"
+                     title="{{item.name}}"
+                     ng-click="itemClick(item)">
+                    <span>{{item.name}}</span>
+                </div>
+            </li>
+        </ul>
+        <ul ng-if="options.selectType == 'userSelect'">
+            <li ng-repeat="item in allUser|filter: {name:searchText}">
+                <div class="wbg-select-item contact-select"
+                     ng-class="{true:'active'}[isInArray(item.id,innerItems)>-1]"
+                     title="{{item.name}}"
+                     ng-click="itemClick(item)">
+                    <span>{{item.name}}</span>
+                </div>
+            </li>
+        </ul>
+        <ul ng-if="options.selectType == 'allUserGroupType'">
+            <li class="allUserGroupType-li" ng-repeat="item in allUserGroup|filter:{name:searchText}"
+                ng-class="{'user-type':item.type == 1,'group-type':item.type == 0,'all-type':item.type == -1}">
+                <div class="wbg-select-item contact-select"
+                     ng-class="{true:'active'}[isInAllUerGruopArray(item,innerItems)>-1]"
+                     title="{{item.name}}"
+                     ng-click="itemClick(item)">
+                    <span>{{item.name}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

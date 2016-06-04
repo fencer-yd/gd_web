@@ -8,11 +8,10 @@
 
 		var _self = this;
 
-		_self.username = $cookies.get('username')
+		_self.username = $cookies.get('realname')
 
 
 		_self.logout = function(){
-
 			$cookies.remove('isLogin_pyq');
 			$cookies.remove('realname');
 			$cookies.remove('JSESSIONID');
@@ -29,7 +28,7 @@
 
 		return {
 			restrict:'A',
-			templateUrl:'views/directives/header.html',
+			templateUrl:'../libs/views/directives/header.html',
 			controller: 'headerCtrl',
 			controllerAs:'header'
 		};

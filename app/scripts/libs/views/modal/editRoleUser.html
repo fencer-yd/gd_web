@@ -1,0 +1,97 @@
+<div class="modal modal-preview" role="dialog">
+    <div class="modal-dialog" style="width:710px;width: 710px;overflow: initial !important;">
+        <loader working="working" style="z-index: 100" message="加载中"></loader>
+        <div class="modal-content group-bdg" ng-if="!working">
+            <div class="group-main-title">
+                <span style="display: inline-block;" >添加用户</span>
+                <i class="approval-add-close" ng-click="$hide()"></i>
+            </div>
+            <div class="group-main-body">
+                <div class="edit-group-div clearfix">
+                    <div class="group-list-div">
+                        <div class="group-list-header">可选用户</div>
+                        <div class="group-list-header search-group">
+                            <div class="search-div">
+                                <input type="text" ng-model="allSearchText"/>
+                                <i class="icon-search"></i>
+                            </div>
+                        </div>
+                        <div ng-if="allUser && (allUser | filter : {name : allSearchText}).length > 0"
+                             class="group-list-all-check">
+                            <input type="checkbox" id="allAllSelected" ng-model="data.allAllSelected"
+                                   ng-click="allAllCheck()"/>
+                            <label for="allAllSelected" style="cursor: pointer;">全选</label>
+
+                            <div class="group-choose-num">
+                                <span class="checked-num">{{(data.allAllcheckedList && data.allAllcheckedList.length > 0)?(data.allAllcheckedList.length):(0)}}</span>
+                                <span class="checked-title">已选</span>
+                            </div>
+                        </div>
+                        <ul ng-if="allUser && (allUser | filter : {name : allSearchText}).length > 0">
+                            <li ng-repeat="user in (allUser | filter : {name : allSearchText}) track by $index ">
+                                <div class="list-div clearfix">
+                                    <input type="checkbox" id="'allUser'+{{user.userId}}" ng-model="user.isSelected"
+                                           ng-click="allIsAllcheck()"/>
+                                    <label for="'allUser'+{{user.userId}}" ng-bind="user.name"></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="empty-group-user"
+                             ng-if="!allUser || (allUser | filter : {name : allSearchText}).length == 0">~没有用户
+                        </div>
+                    </div>
+                    <div class="group-move-div">
+                        <div>
+                            <i class="group-move-right"
+                               ng-class="{'can-push':(data.allAllcheckedList && data.allAllcheckedList.length > 0)}"
+                               ng-click="groupRigthPush()"></i>
+                        </div>
+                        <div>
+                            <i class="group-move-left"
+                               ng-class="{'can-push':(data.thisAllcheckedList && data.thisAllcheckedList.length > 0)}"
+                               ng-click="groupLeftPush()"></i>
+                        </div>
+                    </div>
+                    <div class="group-list-div">
+                        <div class="group-list-header">已选用户</div>
+                        <div class="group-list-header search-group">
+                            <div class="search-div">
+                                <input type="text" ng-model="thisSearchText"/>
+                                <i class="icon-search"></i>
+                            </div>
+                        </div>
+                        <div ng-if="data.users && (data.users | filter : {name : thisSearchText}).length > 0"
+                             class="group-list-all-check">
+                            <input ng-model="data.thisAllSelected" ng-click="thisAllCheck()" type="checkbox"
+                                   id="thisAllSelected"/>
+                            <label for="thisAllSelected" style="cursor: pointer;">全选</label>
+
+                            <div class="group-choose-num">
+                                <span class="checked-num">{{(data.thisAllcheckedList && data.thisAllcheckedList.length > 0)?(data.thisAllcheckedList.length):(0)}}</span>
+                                <span class="checked-title">已选</span>
+                            </div>
+                        </div>
+                        <ul ng-if="data.users && (data.users | filter : {name : thisSearchText}).length > 0">
+                            <li ng-repeat="user in (data.users | filter : {name: thisSearchText}) track by $index">
+                                <div class="list-div clearfix">
+                                    <input type="checkbox" id="'thisUser'+{{user.userId}}" ng-model="user.isSelected"
+                                           ng-click="thisIsAllcheck()"/>
+                                    <label for="'thisUser'+{{user.userId}}" ng-bind="user.name"></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="empty-group-user"
+                             ng-if="!data.users || (data.users | filter : {name : thisSearchText}).length == 0">~没有用户
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group-list-foot">
+                <button type="button" class="btn btn-save group-list-save-btn group-list-cancle-btn" ng-click="$hide()">
+                    取消
+                </button>
+                <button type="button" class="btn btn-save group-list-save-btn" ng-click="saveGroup()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

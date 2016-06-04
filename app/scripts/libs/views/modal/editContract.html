@@ -1,0 +1,78 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" align="center">
+        编辑合同
+      </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="part_a" class="col-sm-2 control-label">甲方</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="part_a" ng-model="editContract.party_aName" readonly>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">乙方</label>
+            <div class="col-sm-10">
+              <select name="" id="party_b" class="form-control"  ng-model="editContract.party_b" ng-options="company.tenant as company.name for company in editContract.dataOfCompany"></select>
+
+              <!--<select class="form-control" ng-model="createContract.party_b">-->
+                <!--<option value="">请选择</option>-->
+                <!--<option  ng-repeat="company in createContract.dataOfCompany" value="{{company.tenant}}">{{company.name}}</option>-->
+              <!--</select>-->
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">合同名称</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" ng-model="editContract.name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="effectiveTime" class="col-sm-2 control-label">生效时间</label>
+            <div class="col-sm-10">
+              <input type="datetime-local" class="form-control" id="effectiveTime" ng-model="editContract.effectiveTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="expirationTime" class="col-sm-2 control-label">截止时间</label>
+            <div class="col-sm-10">
+              <input type="datetime-local" class="form-control" id="expirationTime" ng-model="editContract.expirationTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">选用模板</label>
+            <div class="col-sm-10">
+              <select name="" id="templet" class="form-control"  ng-model="editContract.templetId" ng-change="editContract.change(editContract.templetId)"  ng-options="templet.id as templet.name for templet in editContract.templets"></select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">关键字</label>
+            <div class="col-sm-10">
+              <input
+                type='hidden'
+                data-all-contacts="editContract.mapData.mappingLists"
+                data-multiple="true"
+                data-select-type="contactSelect"
+                data-placeholder="请选择"
+                ng-model="editContract.keyIDs"
+                wbg-select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <textarea id="content" name="content" ui-tinymce="editContract.tinymceOptions" ng-model="editContract.tinymceModel"></textarea>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer" align="center">
+        <button class="btn btn-warning" ng-click="editContract.submit()">Submit</button>
+        <button class="btn btn-warning" ng-click="editContract.cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" align="center">
+         编辑元素
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="id">编号</label>
+            <input type="text" class="form-control" id="id" placeholder="元素编号" ng-model="itemEdit.id" readonly>
+          </div>
+          <div class="form-group">
+            <label for="elementName">元素名称</label>
+            <input type="text" class="form-control" id="elementName" placeholder="元素名称" ng-model="itemEdit.name" >
+          </div>
+          <div class="form-group">
+            <label for="content">编辑内容</label>
+            <textarea id="content" name="content" ui-tinymce="itemEdit.tinymceOptions" ng-model="itemEdit.tinymceModel"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" align="center">
+        <button class="btn btn-warning" ng-click="itemEdit.submit()">Submit</button>
+        <button class="btn btn-warning" ng-click="itemEdit.cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

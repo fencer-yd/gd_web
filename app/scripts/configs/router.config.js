@@ -6,25 +6,23 @@
 
 	var router = function ($stateProvider, $urlRouterProvider, $locationProvider) {
 		$urlRouterProvider.otherwise("/main");
-
 		$stateProvider
-
 			.state('main', {
 				url: '/main',
-				templateUrl: 'views/main.html',
+				templateUrl: '../libs/views/main.html',
 				controller: 'mainCtrl',
 				controllerAs: 'main'
 			})
 			.state('main.form', {
 				url: '/:listId/:itemId',
-				templateUrl: 'views/formList.html',
+				templateUrl: '../libs/views/formList.html',
 				controller: 'formListCtrl',
 				controllerAs: 'form'
 			})
 
 			.state('login', {
 				url: "/login",
-				templateUrl: 'views/login.html',
+				templateUrl: '../libs/views/login.html',
 				controller: 'loginCtrl',
 				controllerAs: 'login'
 			});

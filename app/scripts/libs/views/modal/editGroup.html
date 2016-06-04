@@ -1,0 +1,21 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" align="center">
+                 编辑用户组
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="groupName">分组名称</label>
+                        <input type="text" class="form-control" id="groupName" placeholder="分组名称" ng-model="editGroup.name" >
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" align="center">
+                <button class="btn btn-warning" ng-click="editGroup.submit()">Submit</button>
+                <button class="btn btn-warning" ng-click="editGroup.cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

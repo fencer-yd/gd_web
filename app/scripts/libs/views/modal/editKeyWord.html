@@ -1,0 +1,25 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" align="center">
+        新建关键字
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="id">编号</label>
+            <input type="text" class="form-control" id="id" placeholder="关键字编号" ng-model="editKeyWord.id" readonly>
+          </div>
+          <div class="form-group">
+            <label for="elementName">关键字名称</label>
+            <input type="text" class="form-control" id="elementName" placeholder="关键字名称" ng-model="editKeyWord.name">
+          </div>
+        </form>
+        <div class="modal-footer" align="center">
+          <button class="btn btn-warning" ng-click="editKeyWord.submit()">Submit</button>
+          <button class="btn btn-warning" ng-click="editKeyWord.cancel()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

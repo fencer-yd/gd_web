@@ -1,0 +1,35 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" align="center">
+        新建模板
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="elementName">模板名称</label>
+            <input type="text" class="form-control" id="elementName" placeholder="模板名称" ng-model="createTemplet.name">
+          </div>
+          <div class="form-group">
+            <label for="type">模板类别</label>
+            <select name="" id="type" class="form-control" ng-model="createTemplet.type">
+              <option value="3">请选择</option>
+              <option value="0">个人模板</option>
+              <option value="1">共享模板</option>
+              <option value="2">专家模板</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="content">模板内容</label>
+            <textarea id="content" name="content" ui-tinymce="createTemplet.tinymceOptions" ng-model="createTemplet.tinymceModel"></textarea>
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer" align="center">
+        <button class="btn btn-warning" ng-click="createTemplet.submit()">Submit</button>
+        <button class="btn btn-warning" ng-click="createTemplet.cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

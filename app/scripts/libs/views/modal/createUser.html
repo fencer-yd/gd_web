@@ -1,0 +1,58 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" align="center">
+                用户信息
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">账户名</label>
+                        <div class="col-sm-10 control-label">
+                            <input type="text" class="form-control" id="username"
+                                   ng-model="createUser.username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span ng-if="createUser.checkData.checkPasswordResult == 'false'"
+                              ng-bind="createUser.error.password" class="col-sm-12 control-label" style="color:red"></span>
+                        <label for="password" class="col-sm-2 control-label">新密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" placeholder="新密码"
+                                   ng-model="createUser.password"
+                                   ng-class="{'error':createUser.checkData.checkPasswordResult == 'false'}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span ng-if="createUser.checkData.checkTPasswordResult == 'false'"
+                              ng-bind="createUser.error.tPassword" class="col-sm-12 control-label" style="color:red"></span>
+                        <label for="password" class="col-sm-2 control-label">再次输入新密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="tPassword" placeholder="再次输入密码"
+                                   ng-model="createUser.tPassword"
+                                   ng-class="{'error':createUser.checkData.checkTPasswordResult == 'false'}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">真实姓名</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" placeholder="name"
+                                   ng-model="createUser.name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">联系方式</label>
+                        <div class="col-sm-10 control-label">
+                            <input type="text" class="form-control" id="phone" ng-model="createUser.mobile">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" align="center">
+                <button class="btn btn-warning" ng-click="createUser.submit()">Submit</button>
+                <button class="btn btn-warning" ng-click="createUser.cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

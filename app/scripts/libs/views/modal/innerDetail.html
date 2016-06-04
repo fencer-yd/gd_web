@@ -1,0 +1,15 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header" align="center">
+              合同模板
+            </div>
+            <div class="modal-body" style="max-height: 600px;overflow-y: scroll;">
+              <span ng-bind-html="inner.content"></span>
+            </div>
+            <div class="modal-footer"  align="center">
+              <button class="btn btn-warning" ng-click="inner.cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

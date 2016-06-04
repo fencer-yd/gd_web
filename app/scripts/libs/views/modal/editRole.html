@@ -1,0 +1,38 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" align="center">
+                角色编辑
+            </div>
+            <div class="modal-body">
+                <ul class="role-list">
+                    <li ng-repeat="role in editRole.roleList track by $index">
+                        <div>
+                            <input type="checkbox" id="{{'role_p_isOpen'+role.id}}" class="ng-hide" ng-model="role.isOpen">
+                            <label for="{{'role_p_isOpen'+role.id}}">
+                                <i ng-if="!role.isOpen" class="fa fa-plus-circle"></i>
+                                <i ng-if="role.isOpen" class="fa fa-minus-circle"></i>
+                            </label>
+                            <input type="checkbox" ng-change="editRole.changeParents(role)" id="{{'role_p'+role.id}}" ng-model="role.isChecked"/>
+                            <label for="{{'role_p'+role.id}}" ng-bind="role.name"></label>
+                        </div>
+                        <div class="role-c-list" ng-if="role.isOpen">
+                            <ul ng-if="role.children && role.children.length > 0">
+                                <li ng-repeat="role_c in role.children track by $index">
+                                    <div>
+                                            <input type="checkbox" ng-change="editRole.changechilds(role)" id="{{'role_c'+role_c.id}}"  ng-model="role_c.isChecked"/>
+                                        <label for="{{'role_c'+role_c.id}}" ng-bind="role_c.name"></label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="editRole.submit()"><i class="fa fa-check fa-fw"></i> 确定</button>
+                <button class="btn btn-warning" ng-click="editRole.cancel()"><i class="fa fa-times fa-fw"></i> 取消</button>
+            </div>
+        </div>
+    </div>
+</div>

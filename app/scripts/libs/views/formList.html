@@ -1,0 +1,61 @@
+<div id="formList_pyq">
+    <div class="form-header">
+        <div class="header-box">
+            <div class="h-l">
+                <input type="text" class="form-control" placeholder="输入搜索内容" ng-model="form.searchText">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="h-r">
+                <div ng-if="form.thisItemId!='6' && form.thisItemId!='7' && form.thisItemId!='16' && form.thisItemId!='10' && form.thisItemId!='11' " class="add-btn">
+                    <i class="fa fa-plus"></i>
+                    <span ng-click="form.create(form.thisItemId,{tip:'create'})">新建</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-body">
+        <div class="form-main">
+            <div class="d-table">
+                <table class="home-table">
+                    <thead>
+                        <tr>
+                            <th ng-repeat="filed in form.tableTheadList">{{filed}}</th>
+                            <th ng-if="form.thisItemId!='10' && form.thisItemId">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in (form.tabledataList | filter: form.searchText)">
+                            <td ng-repeat="property in form.tableTheadPropertis" >
+                              <span ng-if="property == 'uTime' || property == 'cTime' || property == 'effectiveTime' || property == 'expirationTime'" ng-bind="data[property] | date:'yyyy-MM-dd HH:mm:ss'"></span>
+                              <span ng-if="property != 'uTime' && property != 'cTime' && property != 'content' && property != 'type' && property != 'effectiveTime' && property != 'expirationTime' && property != 'situate' && property != 'party_a' && property != 'party_b' && property != 'keyWords' && property != 'party_a_opinion' && property != 'party_b_opinion' && property != 'size' && property !='permisstion' && property !='groupUsers'" ng-bind="data[property]"></span>
+                              <span ng-if="property == 'content'" ng-click="form.showDetail(data['content'])">详情</span>
+                              <span ng-if="property == 'type' && data['type']==0">个人模板</span>
+                              <span ng-if="property == 'type' && data['type']==1">共享模板</span>
+                              <span ng-if="property == 'type' && data['type']==2">专家模板</span>
+                              <span ng-if="property == 'situate' && data['situate']=='1'">未审核</span>
+                              <span ng-if="property == 'situate' && data['situate']=='2'">已通过</span>
+                              <span ng-if="property == 'situate' && data['situate']=='3'">驳回</span>
+                              <span ng-if="property == 'party_a'" ng-bind="form.companyMap[data['party_a']]"></span>
+                              <span ng-if="property == 'party_b'" ng-bind="form.companyMap[data['party_b']]"></span>
+                              <span ng-if="property == 'keyWords'" ng-bind="form.getKeyName(data['keyWords'])"></span>
+                              <span ng-if="property == 'size'" ng-bind="data[property] + 0 + '人'"></span>
+                                <button class="icon-btn" ng-disabled="data['name'] == '管理组'" ng-if="property == 'permisstion'" ng-click="form.showRoleDetail(data['id'])"><i class="fa fa-lock"></i></button>
+                                <button class="icon-btn" ng-if="property == 'groupUsers'" ng-click="form.showUserDetail(data['id'])"><i class="fa fa-user"></i></button>
+                              <span ng-if="property == 'party_a_opinion'" title= {{data[property]}} ng-bind="data[property]"></span>
+                              <span ng-if="property == 'party_b_opinion'" title= {{data[property]}} ng-bind="data[property]"></span>
+                            </td>
+                            <td>
+                                <div ng-if="form.thisItemId!='10'">
+                                    <i ng-if="form.thisItemId!='7' && form.thisItemId!='3' && form.thisItemId!='16'" class="fa fa-trash" title="删除" ng-click="form.delete(form.thisItemId,data)"></i>
+                                    <i class="fa fa-edit" title="编辑" ng-click="form.edit(form.thisItemId,data)"></i>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="form-footer"></div>
+</div>

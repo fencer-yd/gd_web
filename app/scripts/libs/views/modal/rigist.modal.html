@@ -36,6 +36,11 @@
                     <label>管理员帐号:</label>
                     <input class="form-control apl-form-input" ng-model="rigist.putData.username" ng-class="{'error':rigist.checkData.checkUsernameResult == 'false'}" type="text">
                 </div>
+
+              <div class="rigist-info">
+                <label>管理员姓名:</label>
+                <input class="form-control apl-form-input" ng-model="rigist.putData.name" type="text">
+              </div>
                 <div class="rigist-info">
                     <span ng-if="rigist.checkData.checkPasswordResult == 'false'" ng-bind="rigist.error.password"></span>
                     <label>管理员密码:</label>

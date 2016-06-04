@@ -1,0 +1,78 @@
+<div class="modal modal-preview" id="inner_detail" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" align="center">
+        新建合同
+      </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="part_a" class="col-sm-2 control-label">甲方</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="part_a" ng-model="createContract.party_aName" readonly>
+            </div>
+            </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">乙方</label>
+            <div class="col-sm-10">
+              <select class="form-control" ng-model="createContract.party_b">
+                <option value="">请选择</option>
+                <option  ng-repeat="company in createContract.dataOfCompany" value="{{company.tenant}}">{{company.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">合同名称</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" ng-model="createContract.name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="effectiveTime" class="col-sm-2 control-label">生效时间</label>
+            <div class="col-sm-10">
+              <input type="datetime-local" class="form-control" id="effectiveTime" ng-model="createContract.effectiveTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="expirationTime" class="col-sm-2 control-label">截止时间</label>
+            <div class="col-sm-10">
+              <input type="datetime-local" class="form-control" id="expirationTime" ng-model="createContract.expirationTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">选用模板</label>
+            <div class="col-sm-10">
+              <select class="form-control" ng-change="createContract.change(createContract.content)" ng-model="createContract.content">
+                <option  ng-repeat="templet in createContract.templet" value = {{templet.content}} >{{templet.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">关键字</label>
+            <div class="col-sm-10">
+              <input
+                type='hidden'
+                data-all-contacts="createContract.mapData.mappingLists"
+                data-multiple="true"
+                data-select-type="contactSelect"
+                data-placeholder="请选择"
+                ng-model="createContract.keyIDs"
+                wbg-select>
+          </div>
+            </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <textarea id="content" name="content" ui-tinymce="createContract.tinymceOptions" ng-model="createContract.tinymceModel"></textarea>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer" align="center">
+        <button class="btn btn-warning" ng-click="createContract.submit()">Submit</button>
+        <button class="btn btn-warning" ng-click="createContract.cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

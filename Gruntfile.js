@@ -103,9 +103,11 @@ module.exports = function (grunt) {
 				proxies: [
 					{
 						context: '/rest',
-						host: '192.168.6.2',
+						//host: '192.168.6.2',
+						host:'127.0.0.1',
+						//host:'192.168.0.103',
 						changeOrigin: true,
-						port: 8080,
+						port: 8081,
 						rewrite: {
 							'^/rest': '/rest'
 						}
