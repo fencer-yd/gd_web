@@ -9,20 +9,20 @@
 		$stateProvider
 			.state('main', {
 				url: '/main',
-				templateUrl: '../libs/views/main.html',
+				templateUrl: '../../views/main.html',
 				controller: 'mainCtrl',
 				controllerAs: 'main'
 			})
 			.state('main.form', {
 				url: '/:listId/:itemId',
-				templateUrl: '../libs/views/formList.html',
+				templateUrl: '../../views/formList.html',
 				controller: 'formListCtrl',
 				controllerAs: 'form'
 			})
 
 			.state('login', {
 				url: "/login",
-				templateUrl: '../libs/views/login.html',
+				templateUrl: '../../views/login.html',
 				controller: 'loginCtrl',
 				controllerAs: 'login'
 			});

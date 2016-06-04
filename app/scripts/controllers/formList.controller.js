@@ -1178,7 +1178,7 @@
                 case '2':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editItem.html',
+                        templateUrl: '../../views/modal/editItem.html',
                         controller: 'itemEditCtrl',
                         controllerAs: 'itemEdit',
                         resolve: {
@@ -1196,7 +1196,7 @@
                 case '3':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editKeyWord.html',
+                        templateUrl: '../../views/modal/editKeyWord.html',
                         controller: 'editKeyWordCtrl',
                         controllerAs: 'editKeyWord',
                         resolve: {
@@ -1214,7 +1214,7 @@
                 {
                     if (data.userId == $cookies.get('userId')) {
                         modalConfig = {
-                            templateUrl: '../libs/views/modal/editTemplet.html',
+                            templateUrl: '../../views/modal/editTemplet.html',
                             controller: 'editTempletCtrl',
                             controllerAs: 'editTemplet',
                             resolve: {
@@ -1236,7 +1236,7 @@
                 {
                     if (data.situate != 2) {
                         modalConfig = {
-                            templateUrl: '../libs/views/modal/editContract.html',
+                            templateUrl: '../../views/modal/editContract.html',
                             controller: 'editContractCtrl',
                             controllerAs: 'editContract',
                             resolve: {
@@ -1257,7 +1257,7 @@
                 {
                     if (data.situate == 1 || data.situate == 3) {
                         modalConfig = {
-                            templateUrl: '../libs/views/modal/checkContract.html',
+                            templateUrl: '../../views/modal/checkContract.html',
                             controller: 'checkContractCtrl',
                             controllerAs: 'checkContract',
                             resolve: {
@@ -1277,7 +1277,7 @@
                 case '7':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editSignForm.html',
+                        templateUrl: '../../views/modal/editSignForm.html',
                         controller: 'editSignFormCtrl',
                         controllerAs: 'editSignForm',
                         resolve: {
@@ -1295,7 +1295,7 @@
                 case '9':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editProduct.html',
+                        templateUrl: '../../views/modal/editProduct.html',
                         controller: 'editProductCtrl',
                         controllerAs: 'editProduct',
                         resolve: {
@@ -1313,7 +1313,7 @@
                 {
                     if (data.type != 1) {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editTemplet.html',
+                        templateUrl: '../../views/modal/editTemplet.html',
                         controller: 'editTempletCtrl',
                         controllerAs: 'editTemplet',
                         resolve: {
@@ -1332,7 +1332,7 @@
                 case '12':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editKeyWord.html',
+                        templateUrl: '../../views/modal/editKeyWord.html',
                         controller: 'editKeyWordCtrl',
                         controllerAs: 'editKeyWord',
                         resolve: {
@@ -1348,7 +1348,7 @@
                 case '13':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editItem.html',
+                        templateUrl: '../../views/modal/editItem.html',
                         controller: 'itemEditCtrl',
                         controllerAs: 'itemEdit',
                         resolve: {
@@ -1365,7 +1365,7 @@
                 case '15':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editUser.html',
+                        templateUrl: '../../views/modal/editUser.html',
                         controller: 'editUserCtrl',
                         controllerAs: 'editUser',
                         resolve: {
@@ -1381,7 +1381,7 @@
                 case '16':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editCompany.html',
+                        templateUrl: '../../views/modal/editCompany.html',
                         controller: 'editCompanyCtrl',
                         controllerAs: 'editCompany',
                         resolve: {
@@ -1397,7 +1397,7 @@
                 case '17':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/editGroup.html',
+                        templateUrl: '../../views/modal/editGroup.html',
                         controller: 'editGroupCtrl',
                         controllerAs: 'editGroup',
                         resolve: {
@@ -1432,7 +1432,7 @@
                 case '2':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/createItem.html',
+                        templateUrl: '../../views/modal/createItem.html',
                         controller: 'itemCreateCtrl',
                         controllerAs: 'item'
                     };
@@ -1442,7 +1442,7 @@
                 case '3':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/createKeyWord.html',
+                        templateUrl: '../../views/modal/createKeyWord.html',
                         controller: 'keyWordCtrl',
                         controllerAs: 'keyword'
                     };
@@ -1452,7 +1452,7 @@
                 case '4':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/createTemplet.html',
+                        templateUrl: '../../views/modal/createTemplet.html',
                         controller: 'createTempletCtrl',
                         controllerAs: 'createTemplet'
                     };
@@ -1462,7 +1462,7 @@
                 case '5':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/createContract.html',
+                        templateUrl: '../../views/modal/createContract.html',
                         controller: 'createContractCtrl',
                         controllerAs: 'createContract'
                     };
@@ -1471,7 +1471,7 @@
                 case '9':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/createProduct.html',
+                        templateUrl: '../../views/modal/createProduct.html',
                         controller: 'createProductCtrl',
                         controllerAs: 'createProduct'
                     };
@@ -1481,7 +1481,7 @@
                 case '15':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/createUser.html',
+                        templateUrl: '../../views/modal/createUser.html',
                         controller: 'createUserCtrl',
                         controllerAs: 'createUser',
                         resolve: {
@@ -1497,7 +1497,7 @@
                 case '17':
                 {
                     modalConfig = {
-                        templateUrl: '../libs/views/modal/createGroup.html',
+                        templateUrl: '../../views/modal/createGroup.html',
                         controller: 'createGroupCtrl',
                         controllerAs: 'createGroup',
                         resolve: {
@@ -1520,7 +1520,7 @@
         };
         _self.showRoleDetail = function(groupId){
             $modal({
-                templateUrl: '../libs/views/modal/editRole.html',
+                templateUrl: '../../views/modal/editRole.html',
                 backdrop: 'static',
                 resolve: {
                     data: function () {
@@ -1537,7 +1537,7 @@
         _self.showUserDetail = function(groupId){
             console.log('haha');
             $modal({
-                templateUrl: '../libs/views/modal/editRoleUser.html',
+                templateUrl: '../../views/modal/editRoleUser.html',
                 backdrop: 'static',
                 resolve: {
                     groupData: function () {
@@ -1553,7 +1553,7 @@
         };
         _self.showDetail = function (content) {
             $modal({
-                templateUrl: '../libs/views/modal/innerDetail.html',
+                templateUrl: '../../views/modal/innerDetail.html',
                 backdrop: 'static',
                 resolve: {
                     _content: function () {

@@ -25,7 +25,7 @@
       return {
         restrict: 'A',
         require: 'ngModel',
-        templateUrl: '../libs/views/directives/wbgSelectDirective.html',
+        templateUrl: '../../views/directives/wbgSelectDirective.html',
         replace: true,
         scope: {
           orgTree: '=orgTree',

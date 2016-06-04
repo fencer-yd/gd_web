@@ -28,7 +28,7 @@
 
 		return {
 			restrict:'A',
-			templateUrl:'../libs/views/directives/header.html',
+			templateUrl:'../../views/directives/header.html',
 			controller: 'headerCtrl',
 			controllerAs:'header'
 		};

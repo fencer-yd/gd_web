@@ -175,7 +175,7 @@
 
         _self.rigist = function () {
             $modal({
-                templateUrl: '../libs/views/modal/rigist.modal.html',
+                templateUrl: '../../views/modal/rigist.modal.html',
                 backdrop: 'static',
                 placement: 'center',
                 show: true,
